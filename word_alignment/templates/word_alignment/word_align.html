@@ -1,0 +1,67 @@
+{% load static %}
+{% load mathfilters %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Word Align Page</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+	<style type="text/css">
+		#alignarea{
+			margin: auto;
+			background-color: white;
+			height: 210px;
+			width: 1400;
+		}
+
+		#change{
+			margin-left: 570px;
+		}
+
+		#pagenumber{
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			background-color: white;
+			color: black;
+			text-align: center;
+		}
+
+		button{
+			height: 25px;
+			width: 50px;
+		}
+		
+	</style>
+	<script type="text/javascript" src="{% static 'JavaScript/function.js' %}"></script>
+</head>
+<body>
+	<h1>Bắt đầu gióng hàng từ!</h1>
+	<div id="alignarea">
+		<div id="source">
+			{% for word,id in s_words %}
+				<button id=s{{id}} onclick="getPositionXY1(this)">{{word}}</button>
+			{% endfor %}
+		</div>
+		<canvas id="myCanvas" width="1400" height="150" ></canvas>
+		<div id="destination">
+			{% for word,id in d_words %}
+				<button id=d{{id}} onclick="getPositionXY2(this)">{{word}}</button>
+			{% endfor %}
+		</div>
+	</div>
+	<br><br>
+	<div class="change" id="change">
+		<form method="GET" >
+			{% csrf_token %}
+			<input type="submit" value="Prev" class="prev" name="prev_button">
+			<span id="pagenumber">{{number}}</span>
+			<input type="submit" value="Next" class="next" name="next_button">
+			<br><br>
+			<input type="submit" name="reverse" value="Reverse">
+		</form>
+	</div>
+
+</body>
+</html>

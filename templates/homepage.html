@@ -1,0 +1,66 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Homepage</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+	<style type="text/css">
+		.wrapper{
+			text-align: center;
+		}
+
+		.button {
+  			border: none;
+  			color: white;
+  			padding: 16px 32px;
+  			text-align: center;
+  			text-decoration: none;
+  			display: inline-block;
+  			font-size: 16px;
+  			margin: 4px 2px;
+  			transition-duration: 0.4s;
+  			cursor: pointer;
+		}
+
+		.button1 {
+  			background-color: white; 
+  			color: black; 
+  			border: 2px solid #4CAF50;
+		}
+
+		.button1:hover {
+  			background-color: #4CAF50;
+  			color: white;
+		}
+	</style>
+</head>
+<body>
+	<h1>Chào mừng đến với công cụ hỗ trợ gióng hàng từ!</h1>
+	<h2>Đôi điều về công cụ và nhóm thực hiện:</h2>
+	<p>
+		Công cụ được thực hiện bởi nhóm sinh viên gồm 3 sinh viên đến từ ngành Công nghệ tri thức thuộc trường Đại học Khoa học Tự nhiên gồm: Nguyễn Ngọc Bình, Lê Phú Thành và Trương Hoàng Bảo.
+		<br> Công cụ hỗ trợ gióng hàng từ được tạo ra với mục đích hỗ trợ cho mọi người đặc biệt là những người thuộc bên ngành ngôn ngữ học có được một công cụ để hỗ trợ trong quá trình phiên dịch hay tạo giáo án giảng dạy ngôn ngữ. Công cụ được viết với Django, html và javascript. Được nhóm cố gắng đơn giản hóa nhất có thể để mọi người đều cảm thấy dễ sử dụng.
+	</p>
+	<h2>Lưu ý khi ở bước đọc file:</h2>
+	<p>
+		_ Hiện tại công cụ có thể xử lý hỗ trợ đọc được file có đuôi .txt (thường được viết bằng notepad).
+		<br>_ File đầu vào cần là file đã được xử lý gióng hàng câu.
+		<br>_ Mỗi file đầu vào chứa gồm những cặp câu chỉ đến từ hai ngông ngữ và mỗi cặp câu như vậy cần cách nhau ít nhất một dòng.
+		<br>Ví dụ: Có file example.txt như sau (các cặp câu từ hai ngôn ngữ cách nhau ít nhất một dòng):
+		<br>	Hiding from the rain and snow
+		<br>	Dấu mình trong lạnh lẽo và cô đơn
+		<br>
+		<br>	Trying to forget but I won't let go
+		<br>	Cố gắng quên đi tất cả nhưng tôi không thể
+	</p>
+	<h2 id="getstart">Bắt đầu nhập file vào nào!</h2>
+	<a href=word_alignment/word_align/>
+		<div class="wrapper">
+    		<button class="button button1">Bắt đầu nào!</button>
+    	</div>
+	</a>
+
+</body>
+</html>
